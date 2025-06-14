@@ -5,52 +5,56 @@
 @tailwind utilities;
 
 :root {
-  --background: hsl(210, 40%, 98%);
+  --background: linear-gradient(135deg, hsl(240, 100%, 99%) 0%, hsl(300, 100%, 98%) 50%, hsl(260, 100%, 99%) 100%);
   --foreground: hsl(222.2, 84%, 4.9%);
-  --muted: hsl(210, 40%, 96%);
+  --muted: hsla(210, 40%, 96%, 0.8);
   --muted-foreground: hsl(215.4, 16.3%, 46.9%);
-  --popover: hsl(0, 0%, 100%);
+  --popover: hsla(0, 0%, 100%, 0.95);
   --popover-foreground: hsl(222.2, 84%, 4.9%);
-  --card: hsl(0, 0%, 100%);
+  --card: hsla(0, 0%, 100%, 0.9);
   --card-foreground: hsl(222.2, 84%, 4.9%);
-  --border: hsl(214.3, 31.8%, 91.4%);
-  --input: hsl(214.3, 31.8%, 91.4%);
-  --primary: hsl(244, 75%, 57%);
-  --primary-foreground: hsl(210, 40%, 98%);
-  --secondary: hsl(158, 64%, 52%);
-  --secondary-foreground: hsl(222.2, 84%, 4.9%);
-  --accent: hsl(43, 96%, 56%);
-  --accent-foreground: hsl(222.2, 84%, 4.9%);
-  --destructive: hsl(0, 84.2%, 60.2%);
-  --destructive-foreground: hsl(210, 40%, 98%);
-  --ring: hsl(222.2, 84%, 4.9%);
-  --radius: 0.75rem;
-  --surface: hsl(0, 0%, 100%);
-  --app-background: hsl(210, 40%, 98%);
+  --border: hsla(214.3, 31.8%, 91.4%, 0.6);
+  --input: hsla(214.3, 31.8%, 91.4%, 0.8);
+  --primary: linear-gradient(135deg, hsl(280, 85%, 65%) 0%, hsl(260, 80%, 70%) 50%, hsl(240, 90%, 75%) 100%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: linear-gradient(135deg, hsl(170, 75%, 65%) 0%, hsl(160, 70%, 60%) 50%, hsl(150, 80%, 55%) 100%);
+  --secondary-foreground: hsl(0, 0%, 100%);
+  --accent: linear-gradient(135deg, hsl(45, 95%, 65%) 0%, hsl(35, 90%, 60%) 50%, hsl(25, 85%, 55%) 100%);
+  --accent-foreground: hsl(0, 0%, 100%);
+  --destructive: linear-gradient(135deg, hsl(0, 75%, 65%) 0%, hsl(350, 70%, 60%) 100%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --ring: hsl(280, 85%, 65%);
+  --radius: 1rem;
+  --surface: hsla(0, 0%, 100%, 0.85);
+  --glass-bg: hsla(255, 255%, 255%, 0.1);
+  --glass-border: hsla(255, 255%, 255%, 0.2);
+  --shadow-color: hsla(280, 85%, 65%, 0.15);
 }
 
 .dark {
-  --background: hsl(222.2, 84%, 4.9%);
+  --background: linear-gradient(135deg, hsl(240, 50%, 8%) 0%, hsl(260, 60%, 6%) 50%, hsl(280, 70%, 4%) 100%);
   --foreground: hsl(210, 40%, 98%);
-  --muted: hsl(217.2, 32.6%, 17.5%);
+  --muted: hsla(217.2, 32.6%, 17.5%, 0.8);
   --muted-foreground: hsl(215, 20.2%, 65.1%);
-  --popover: hsl(222.2, 84%, 4.9%);
+  --popover: hsla(222.2, 84%, 4.9%, 0.95);
   --popover-foreground: hsl(210, 40%, 98%);
-  --card: hsl(222.2, 84%, 4.9%);
+  --card: hsla(222.2, 84%, 4.9%, 0.9);
   --card-foreground: hsl(210, 40%, 98%);
-  --border: hsl(217.2, 32.6%, 17.5%);
-  --input: hsl(217.2, 32.6%, 17.5%);
-  --primary: hsl(244, 75%, 57%);
-  --primary-foreground: hsl(210, 40%, 98%);
-  --secondary: hsl(158, 64%, 52%);
-  --secondary-foreground: hsl(210, 40%, 98%);
-  --accent: hsl(43, 96%, 56%);
-  --accent-foreground: hsl(222.2, 84%, 4.9%);
-  --destructive: hsl(0, 62.8%, 30.6%);
-  --destructive-foreground: hsl(210, 40%, 98%);
-  --ring: hsl(212.7, 26.8%, 83.9%);
-  --surface: hsl(222.2, 84%, 4.9%);
-  --app-background: hsl(222.2, 84%, 4.9%);
+  --border: hsla(217.2, 32.6%, 17.5%, 0.6);
+  --input: hsla(217.2, 32.6%, 17.5%, 0.8);
+  --primary: linear-gradient(135deg, hsl(280, 85%, 65%) 0%, hsl(260, 80%, 70%) 50%, hsl(240, 90%, 75%) 100%);
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: linear-gradient(135deg, hsl(170, 75%, 65%) 0%, hsl(160, 70%, 60%) 50%, hsl(150, 80%, 55%) 100%);
+  --secondary-foreground: hsl(0, 0%, 100%);
+  --accent: linear-gradient(135deg, hsl(45, 95%, 65%) 0%, hsl(35, 90%, 60%) 50%, hsl(25, 85%, 55%) 100%);
+  --accent-foreground: hsl(0, 0%, 100%);
+  --destructive: linear-gradient(135deg, hsl(0, 75%, 65%) 0%, hsl(350, 70%, 60%) 100%);
+  --destructive-foreground: hsl(0, 0%, 100%);
+  --ring: hsl(280, 85%, 65%);
+  --surface: hsla(222.2, 84%, 4.9%, 0.85);
+  --glass-bg: hsla(0, 0%, 0%, 0.2);
+  --glass-border: hsla(255, 255%, 255%, 0.1);
+  --shadow-color: hsla(280, 85%, 65%, 0.3);
 }
 
 @layer base {
@@ -58,27 +62,87 @@
     @apply border-border;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
-    @apply font-sans antialiased bg-background text-foreground;
+    @apply font-sans antialiased text-foreground;
     font-family: 'Inter', system-ui, sans-serif;
+    background: var(--background);
+    background-attachment: fixed;
+    min-height: 100vh;
   }
 }
 
 @layer components {
   .mobile-container {
-    @apply max-w-md mx-auto bg-surface min-h-screen relative shadow-2xl;
+    @apply max-w-md mx-auto min-h-screen relative;
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 25px 50px var(--shadow-color), 0 0 0 1px var(--glass-border);
+  }
+  
+  .glass-card {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 8px 32px var(--shadow-color);
   }
   
   .task-card, .appointment-card {
-    @apply bg-surface rounded-xl p-4 shadow-sm border border-border relative overflow-hidden transition-all duration-200 hover:shadow-md;
+    @apply glass-card rounded-xl p-4 relative overflow-hidden transition-all duration-300 hover:scale-[1.02];
+    animation: slideInFromBottom 0.5s ease-out;
+  }
+  
+  .task-card::before, .appointment-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, transparent 0%, var(--primary) 50%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+  }
+  
+  .task-card:hover::before, .appointment-card:hover::before {
+    opacity: 0.05;
   }
   
   .floating-action-button {
-    @apply w-14 h-14 bg-primary rounded-full shadow-lg hover:shadow-xl flex items-center justify-center transition-all duration-200 hover:scale-105 active:scale-95;
+    @apply w-16 h-16 rounded-2xl shadow-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95;
+    background: var(--primary);
+    box-shadow: 0 15px 35px var(--shadow-color), 0 5px 15px rgba(0,0,0,0.1);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .floating-action-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+    transition: all 0.6s ease;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+  }
+  
+  .floating-action-button:hover::before {
+    width: 100px;
+    height: 100px;
   }
   
   .modal-overlay {
-    @apply fixed inset-0 bg-black/50 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300;
+    @apply fixed inset-0 z-50 opacity-0 pointer-events-none transition-all duration-300;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(8px);
   }
   
   .modal-overlay.open {
@@ -86,7 +150,11 @@
   }
   
   .modal-content {
-    @apply absolute bottom-0 left-0 right-0 max-w-md mx-auto bg-surface rounded-t-3xl transform translate-y-full transition-transform duration-300;
+    @apply absolute bottom-0 left-0 right-0 max-w-md mx-auto rounded-t-3xl transform translate-y-full transition-all duration-300;
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 -10px 40px var(--shadow-color);
   }
   
   .modal-content.open {
@@ -94,20 +162,105 @@
   }
   
   .tab-button {
-    @apply flex-1 py-2 px-3 text-sm font-medium rounded-md transition-all duration-200;
+    @apply flex-1 py-3 px-4 text-sm font-medium rounded-xl transition-all duration-300 relative overflow-hidden;
   }
   
   .tab-button.active {
-    @apply bg-surface text-primary shadow-sm;
+    background: var(--primary);
+    color: var(--primary-foreground);
+    box-shadow: 0 4px 15px var(--shadow-color);
+    transform: translateY(-2px);
   }
   
   .tab-button.inactive {
     @apply text-muted-foreground hover:text-foreground;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+  }
+  
+  .gradient-text {
+    background: var(--primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .animate-pulse-slow {
+    animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  .stat-card {
+    @apply glass-card rounded-2xl p-5 relative overflow-hidden transition-all duration-300 hover:scale-105;
+    background: linear-gradient(135deg, var(--glass-bg) 0%, var(--surface) 100%);
+  }
+  
+  .stat-card::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+    transform: rotate(45deg);
+    transition: all 0.6s;
+    opacity: 0;
+  }
+  
+  .stat-card:hover::after {
+    animation: shimmer 1.5s ease-in-out;
   }
 }
 
 @layer utilities {
   .haptic-feedback {
     @apply active:scale-95 transition-transform duration-75;
+  }
+}
+
+@keyframes slideInFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%) translateY(-100%) rotate(45deg);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100%) translateY(100%) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 20px var(--shadow-color);
+  }
+  50% {
+    box-shadow: 0 0 40px var(--shadow-color), 0 0 60px var(--shadow-color);
   }
 }

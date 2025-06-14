@@ -66,31 +66,33 @@ export default function Home() {
   return (
     <div className="mobile-container">
       {/* Header */}
-      <header className="bg-surface border-b border-border px-4 py-3 sticky top-0 z-40">
+      <header className="glass-card border-b border-border px-4 py-4 sticky top-0 z-40 backdrop-blur-xl">
         <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-3">
-            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-              <CheckCircle2 className="text-primary-foreground w-4 h-4" />
+          <div className="flex items-center space-x-4">
+            <div className="w-12 h-12 rounded-2xl flex items-center justify-center animate-float relative overflow-hidden" 
+                 style={{ background: 'var(--primary)' }}>
+              <CheckCircle2 className="text-primary-foreground w-6 h-6 relative z-10" />
+              <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent"></div>
             </div>
             <div>
-              <h1 className="text-xl font-semibold text-foreground">TaskFlow</h1>
-              <p className="text-xs text-muted-foreground">{getCurrentDateString()}</p>
+              <h1 className="text-2xl font-bold gradient-text">TaskFlow</h1>
+              <p className="text-sm text-muted-foreground font-medium">{getCurrentDateString()}</p>
             </div>
           </div>
-          <div className="flex items-center space-x-2">
-            <Button variant="ghost" size="icon" className="rounded-lg">
-              <Search className="h-4 w-4" />
+          <div className="flex items-center space-x-3">
+            <Button variant="ghost" size="icon" className="rounded-xl w-10 h-10 glass-card hover:scale-110 transition-all duration-300">
+              <Search className="h-5 w-5" />
             </Button>
-            <div className="w-8 h-8 bg-muted rounded-full flex items-center justify-center">
-              <User className="h-4 w-4 text-muted-foreground" />
+            <div className="w-10 h-10 rounded-xl glass-card flex items-center justify-center hover:scale-110 transition-all duration-300">
+              <User className="h-5 w-5 text-muted-foreground" />
             </div>
           </div>
         </div>
       </header>
 
       {/* Tab Navigation */}
-      <div className="bg-surface px-4 py-3 border-b border-border">
-        <div className="flex space-x-1 bg-muted rounded-lg p-1">
+      <div className="glass-card px-4 py-4 border-b border-border">
+        <div className="flex space-x-2 glass-card rounded-2xl p-2">
           {(['hoje', 'proximos', 'concluidos'] as TabType[]).map((tab) => (
             <button
               key={tab}
