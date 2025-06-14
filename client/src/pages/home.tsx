@@ -65,25 +65,28 @@ export default function Home() {
 
   return (
     <div className="mobile-container">
+      {/* Parallax Background */}
+      <div className="parallax-bg"></div>
+      
       {/* Header */}
-      <header className="glass-card border-b border-border px-4 py-4 sticky top-0 z-40 backdrop-blur-xl">
+      <header className="glass-card border-b border-border px-4 py-4 sticky top-0 z-40 backdrop-blur-xl" style={{ animation: 'scaleIn 0.4s ease-out' }}>
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-4">
-            <div className="w-12 h-12 rounded-2xl flex items-center justify-center animate-float relative overflow-hidden" 
-                 style={{ background: 'var(--primary)' }}>
+            <div className="w-12 h-12 rounded-2xl flex items-center justify-center magnetic-effect relative overflow-hidden" 
+                 style={{ background: 'var(--primary)', boxShadow: '0 8px 25px var(--shadow-color)' }}>
               <CheckCircle2 className="text-primary-foreground w-6 h-6 relative z-10" />
-              <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-br from-white/30 to-transparent"></div>
             </div>
             <div>
-              <h1 className="text-2xl font-bold gradient-text">TaskFlow</h1>
+              <h1 className="text-2xl font-bold gradient-text magnetic-effect">TaskFlow</h1>
               <p className="text-sm text-muted-foreground font-medium">{getCurrentDateString()}</p>
             </div>
           </div>
           <div className="flex items-center space-x-3">
-            <Button variant="ghost" size="icon" className="rounded-xl w-10 h-10 glass-card hover:scale-110 transition-all duration-300">
+            <Button variant="ghost" size="icon" className="rounded-xl w-10 h-10 glass-card magnetic-effect transition-all duration-300">
               <Search className="h-5 w-5" />
             </Button>
-            <div className="w-10 h-10 rounded-xl glass-card flex items-center justify-center hover:scale-110 transition-all duration-300">
+            <div className="w-10 h-10 rounded-xl glass-card flex items-center justify-center magnetic-effect transition-all duration-300">
               <User className="h-5 w-5 text-muted-foreground" />
             </div>
           </div>
@@ -109,30 +112,36 @@ export default function Home() {
       <main className="px-4 py-4 pb-24 space-y-4">
         {/* Quick Stats */}
         {activeTab === 'hoje' && (
-          <div className="grid grid-cols-2 gap-4 mb-8">
-            <div className="stat-card group cursor-pointer">
+          <div className="grid grid-cols-2 gap-4 mb-8" style={{ animation: 'fadeInUp 0.6s ease-out' }}>
+            <div className="stat-card elevated-card group cursor-pointer magnetic-effect">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-3xl font-bold gradient-text animate-pulse-slow">{todayTasks.length}</p>
-                  <p className="text-sm text-muted-foreground font-medium">Tarefas hoje</p>
+                  <p className="text-3xl font-bold gradient-text">{todayTasks.length}</p>
+                  <p className="text-sm text-muted-foreground font-medium mb-2">Tarefas hoje</p>
+                  <div className="progress-bar">
+                    <div className="progress-fill" style={{ width: `${Math.min((todayTasks.length / 10) * 100, 100)}%` }}></div>
+                  </div>
                 </div>
-                <div className="w-12 h-12 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-all duration-300 relative overflow-hidden"
+                <div className="w-14 h-14 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-all duration-300 relative overflow-hidden"
                      style={{ background: 'var(--primary)' }}>
-                  <CheckCircle2 className="text-primary-foreground w-6 h-6 relative z-10" />
-                  <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent"></div>
+                  <CheckCircle2 className="text-primary-foreground w-7 h-7 relative z-10" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/30 to-transparent"></div>
                 </div>
               </div>
             </div>
-            <div className="stat-card group cursor-pointer">
+            <div className="stat-card elevated-card group cursor-pointer magnetic-effect" style={{ animationDelay: '0.1s' }}>
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-3xl font-bold gradient-text animate-pulse-slow">{todayAppointments.length}</p>
-                  <p className="text-sm text-muted-foreground font-medium">Compromissos</p>
+                  <p className="text-3xl font-bold gradient-text">{todayAppointments.length}</p>
+                  <p className="text-sm text-muted-foreground font-medium mb-2">Compromissos</p>
+                  <div className="progress-bar">
+                    <div className="progress-fill" style={{ width: `${Math.min((todayAppointments.length / 5) * 100, 100)}%`, background: 'var(--secondary)' }}></div>
+                  </div>
                 </div>
-                <div className="w-12 h-12 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-all duration-300 relative overflow-hidden"
+                <div className="w-14 h-14 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-all duration-300 relative overflow-hidden"
                      style={{ background: 'var(--secondary)' }}>
-                  <Calendar className="text-secondary-foreground w-6 h-6 relative z-10" />
-                  <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent"></div>
+                  <Calendar className="text-secondary-foreground w-7 h-7 relative z-10" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/30 to-transparent"></div>
                 </div>
               </div>
             </div>
@@ -140,30 +149,35 @@ export default function Home() {
         )}
 
         {/* Tasks Section */}
-        <div className="flex items-center justify-between mb-3">
-          <h2 className="text-lg font-semibold text-foreground">
+        <div className="flex items-center justify-between mb-6" style={{ animation: 'fadeInUp 0.6s ease-out 0.2s both' }}>
+          <h2 className="text-xl font-bold gradient-text magnetic-effect">
             {activeTab === 'hoje' ? 'Tarefas de Hoje' : 
              activeTab === 'proximos' ? 'Próximas Tarefas' : 
              'Tarefas Concluídas'}
           </h2>
-          <Button variant="ghost" size="sm" className="text-primary text-sm font-medium">
+          <Button variant="ghost" size="sm" className="text-primary text-sm font-semibold magnetic-effect glass-card px-4 py-2 rounded-xl">
             Ver todas
           </Button>
         </div>
 
         {/* Task List */}
-        <div className="space-y-3">
+        <div className="space-y-4">
           {filteredTasks.length === 0 ? (
-            <div className="text-center py-8">
-              <p className="text-muted-foreground">Nenhuma tarefa encontrada</p>
+            <div className="text-center py-12 glass-card rounded-2xl" style={{ animation: 'scaleIn 0.5s ease-out 0.3s both' }}>
+              <div className="w-16 h-16 rounded-2xl mx-auto mb-4 flex items-center justify-center" style={{ background: 'var(--muted)' }}>
+                <CheckCircle2 className="w-8 h-8 text-muted-foreground" />
+              </div>
+              <p className="text-muted-foreground font-medium">Nenhuma tarefa encontrada</p>
+              <p className="text-sm text-muted-foreground mt-1">Crie sua primeira tarefa!</p>
             </div>
           ) : (
-            filteredTasks.map((task) => (
-              <TaskCard 
-                key={task.id} 
-                task={task} 
-                onEdit={() => handleEdit('task', task.id)}
-              />
+            filteredTasks.map((task, index) => (
+              <div key={task.id} style={{ animation: `fadeInUp 0.6s ease-out ${0.1 * index}s both` }}>
+                <TaskCard 
+                  task={task} 
+                  onEdit={() => handleEdit('task', task.id)}
+                />
+              </div>
             ))
           )}
         </div>
@@ -200,7 +214,7 @@ export default function Home() {
       {/* Floating Action Button */}
       <div className="fixed bottom-24 right-6 z-30">
         <button
-          className="floating-action-button haptic-feedback animate-float"
+          className="floating-action-button haptic-feedback"
           onClick={() => setIsCreateModalOpen(true)}
         >
           <Plus className="text-primary-foreground w-7 h-7 relative z-10" />
