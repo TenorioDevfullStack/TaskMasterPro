@@ -59,7 +59,7 @@
   }
 
   body {
-    @apply font-sans antialiased bg-app-background text-foreground;
+    @apply font-sans antialiased bg-background text-foreground;
     font-family: 'Inter', system-ui, sans-serif;
   }
 }
