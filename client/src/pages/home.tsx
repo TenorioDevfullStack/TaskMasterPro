@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { Plus, Search, User, CheckCircle2, Calendar, BarChart3, Settings } from "lucide-react";
+import { Plus, Search, User, CheckCircle2, Calendar, BarChart3, Settings, Home as HomeIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { TaskCard } from "@/components/task-card";
 import { AppointmentCard } from "@/components/appointment-card";
 import { CreateModal } from "@/components/create-modal";
 import { EditModal } from "@/components/edit-modal";
 import { getCurrentDateString, getTodayDateString } from "@/lib/utils";
+import { Link } from "wouter";
 import type { Task, Appointment } from "@shared/schema";
 
 type TabType = "hoje" | "proximos" | "concluidos";
