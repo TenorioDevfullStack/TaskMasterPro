@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 :root {
-  --background: linear-gradient(135deg, hsl(240, 100%, 99%) 0%, hsl(300, 100%, 98%) 50%, hsl(260, 100%, 99%) 100%);
+  --background: linear-gradient(135deg, hsl(220, 100%, 99%) 0%, hsl(240, 100%, 98%) 50%, hsl(210, 100%, 99%) 100%);
   --foreground: hsl(222.2, 84%, 4.9%);
   --muted: hsla(210, 40%, 96%, 0.8);
   --muted-foreground: hsl(215.4, 16.3%, 46.9%);
@@ -15,20 +15,20 @@
   --card-foreground: hsl(222.2, 84%, 4.9%);
   --border: hsla(214.3, 31.8%, 91.4%, 0.6);
   --input: hsla(214.3, 31.8%, 91.4%, 0.8);
-  --primary: linear-gradient(135deg, hsl(280, 85%, 65%) 0%, hsl(260, 80%, 70%) 50%, hsl(240, 90%, 75%) 100%);
+  --primary: linear-gradient(135deg, hsl(217, 91%, 60%) 0%, hsl(224, 76%, 66%) 50%, hsl(230, 80%, 72%) 100%);
   --primary-foreground: hsl(0, 0%, 100%);
-  --secondary: linear-gradient(135deg, hsl(170, 75%, 65%) 0%, hsl(160, 70%, 60%) 50%, hsl(150, 80%, 55%) 100%);
+  --secondary: linear-gradient(135deg, hsl(158, 64%, 52%) 0%, hsl(162, 63%, 57%) 50%, hsl(166, 65%, 62%) 100%);
   --secondary-foreground: hsl(0, 0%, 100%);
-  --accent: linear-gradient(135deg, hsl(45, 95%, 65%) 0%, hsl(35, 90%, 60%) 50%, hsl(25, 85%, 55%) 100%);
+  --accent: linear-gradient(135deg, hsl(38, 92%, 50%) 0%, hsl(43, 89%, 55%) 50%, hsl(48, 87%, 60%) 100%);
   --accent-foreground: hsl(0, 0%, 100%);
   --destructive: linear-gradient(135deg, hsl(0, 75%, 65%) 0%, hsl(350, 70%, 60%) 100%);
   --destructive-foreground: hsl(0, 0%, 100%);
-  --ring: hsl(280, 85%, 65%);
+  --ring: hsl(217, 91%, 60%);
   --radius: 1rem;
   --surface: hsla(0, 0%, 100%, 0.85);
-  --glass-bg: hsla(255, 255%, 255%, 0.1);
-  --glass-border: hsla(255, 255%, 255%, 0.2);
-  --shadow-color: hsla(280, 85%, 65%, 0.15);
+  --glass-bg: hsla(255, 255%, 255%, 0.35);
+  --glass-border: hsla(255, 255%, 255%, 0.4);
+  --shadow-color: hsla(217, 91%, 60%, 0.15);
 }
 
 .dark {
@@ -42,19 +42,19 @@
   --card-foreground: hsl(210, 40%, 98%);
   --border: hsla(217.2, 32.6%, 17.5%, 0.6);
   --input: hsla(217.2, 32.6%, 17.5%, 0.8);
-  --primary: linear-gradient(135deg, hsl(280, 85%, 65%) 0%, hsl(260, 80%, 70%) 50%, hsl(240, 90%, 75%) 100%);
+  --primary: linear-gradient(135deg, hsl(217, 91%, 60%) 0%, hsl(224, 76%, 66%) 50%, hsl(230, 80%, 72%) 100%);
   --primary-foreground: hsl(0, 0%, 100%);
-  --secondary: linear-gradient(135deg, hsl(170, 75%, 65%) 0%, hsl(160, 70%, 60%) 50%, hsl(150, 80%, 55%) 100%);
+  --secondary: linear-gradient(135deg, hsl(158, 64%, 52%) 0%, hsl(162, 63%, 57%) 50%, hsl(166, 65%, 62%) 100%);
   --secondary-foreground: hsl(0, 0%, 100%);
-  --accent: linear-gradient(135deg, hsl(45, 95%, 65%) 0%, hsl(35, 90%, 60%) 50%, hsl(25, 85%, 55%) 100%);
+  --accent: linear-gradient(135deg, hsl(38, 92%, 50%) 0%, hsl(43, 89%, 55%) 50%, hsl(48, 87%, 60%) 100%);
   --accent-foreground: hsl(0, 0%, 100%);
   --destructive: linear-gradient(135deg, hsl(0, 75%, 65%) 0%, hsl(350, 70%, 60%) 100%);
   --destructive-foreground: hsl(0, 0%, 100%);
-  --ring: hsl(280, 85%, 65%);
+  --ring: hsl(217, 91%, 60%);
   --surface: hsla(222.2, 84%, 4.9%, 0.85);
-  --glass-bg: hsla(0, 0%, 0%, 0.2);
-  --glass-border: hsla(255, 255%, 255%, 0.1);
-  --shadow-color: hsla(280, 85%, 65%, 0.3);
+  --glass-bg: hsla(0, 0%, 0%, 0.4);
+  --glass-border: hsla(255, 255%, 255%, 0.15);
+  --shadow-color: hsla(217, 91%, 60%, 0.25);
 }
 
 @layer base {
