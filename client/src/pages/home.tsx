@@ -238,10 +238,12 @@ export default function Home() {
             <BarChart3 className="w-5 h-5" />
             <span className="text-xs font-medium">Insights</span>
           </button>
-          <button className="flex flex-col items-center space-y-2 p-3 text-muted-foreground hover:text-foreground transition-all duration-300 hover:scale-110 rounded-xl glass-card">
-            <Settings className="w-5 h-5" />
-            <span className="text-xs font-medium">Config</span>
-          </button>
+          <Link href="/settings">
+            <button className="flex flex-col items-center space-y-2 p-3 text-muted-foreground hover:text-foreground transition-all duration-300 hover:scale-110 rounded-xl glass-card magnetic-effect">
+              <Settings className="w-5 h-5" />
+              <span className="text-xs font-medium">Config</span>
+            </button>
+          </Link>
         </div>
       </nav>
 

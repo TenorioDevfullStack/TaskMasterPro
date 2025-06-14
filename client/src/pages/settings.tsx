@@ -1,7 +1,8 @@
-import { Moon, Sun, Settings as SettingsIcon, Bell, Palette, User, Info } from 'lucide-react';
+import { Moon, Sun, Settings as SettingsIcon, Bell, Palette, User, Info, ArrowLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Switch } from '@/components/ui/switch';
 import { useTheme } from '@/contexts/ThemeContext';
+import { Link } from 'wouter';
 
 export default function Settings() {
   const { theme, toggleTheme } = useTheme();
@@ -11,6 +12,11 @@ export default function Settings() {
       {/* Header */}
       <header className="glass-card border-b border-border px-4 py-4 sticky top-0 z-40 backdrop-blur-xl" style={{ animation: 'scaleIn 0.4s ease-out' }}>
         <div className="flex items-center space-x-4">
+          <Link href="/">
+            <Button variant="ghost" size="icon" className="rounded-xl w-12 h-12 glass-card magnetic-effect">
+              <ArrowLeft className="h-5 w-5" />
+            </Button>
+          </Link>
           <div className="w-12 h-12 rounded-2xl flex items-center justify-center magnetic-effect relative overflow-hidden" 
                style={{ background: 'var(--primary)', boxShadow: '0 8px 25px var(--shadow-color)' }}>
             <SettingsIcon className="text-primary-foreground w-6 h-6 relative z-10" />
