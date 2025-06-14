@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --background: hsl(210, 40%, 98%);
+  --foreground: hsl(222.2, 84%, 4.9%);
+  --muted: hsl(210, 40%, 96%);
+  --muted-foreground: hsl(215.4, 16.3%, 46.9%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(222.2, 84%, 4.9%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(222.2, 84%, 4.9%);
+  --border: hsl(214.3, 31.8%, 91.4%);
+  --input: hsl(214.3, 31.8%, 91.4%);
+  --primary: hsl(244, 75%, 57%);
+  --primary-foreground: hsl(210, 40%, 98%);
+  --secondary: hsl(158, 64%, 52%);
+  --secondary-foreground: hsl(222.2, 84%, 4.9%);
+  --accent: hsl(43, 96%, 56%);
+  --accent-foreground: hsl(222.2, 84%, 4.9%);
+  --destructive: hsl(0, 84.2%, 60.2%);
+  --destructive-foreground: hsl(210, 40%, 98%);
+  --ring: hsl(222.2, 84%, 4.9%);
+  --radius: 0.75rem;
+  --surface: hsl(0, 0%, 100%);
+  --app-background: hsl(210, 40%, 98%);
+}
+
+.dark {
+  --background: hsl(222.2, 84%, 4.9%);
+  --foreground: hsl(210, 40%, 98%);
+  --muted: hsl(217.2, 32.6%, 17.5%);
+  --muted-foreground: hsl(215, 20.2%, 65.1%);
+  --popover: hsl(222.2, 84%, 4.9%);
+  --popover-foreground: hsl(210, 40%, 98%);
+  --card: hsl(222.2, 84%, 4.9%);
+  --card-foreground: hsl(210, 40%, 98%);
+  --border: hsl(217.2, 32.6%, 17.5%);
+  --input: hsl(217.2, 32.6%, 17.5%);
+  --primary: hsl(244, 75%, 57%);
+  --primary-foreground: hsl(210, 40%, 98%);
+  --secondary: hsl(158, 64%, 52%);
+  --secondary-foreground: hsl(210, 40%, 98%);
+  --accent: hsl(43, 96%, 56%);
+  --accent-foreground: hsl(222.2, 84%, 4.9%);
+  --destructive: hsl(0, 62.8%, 30.6%);
+  --destructive-foreground: hsl(210, 40%, 98%);
+  --ring: hsl(212.7, 26.8%, 83.9%);
+  --surface: hsl(222.2, 84%, 4.9%);
+  --app-background: hsl(222.2, 84%, 4.9%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-app-background text-foreground;
+    font-family: 'Inter', system-ui, sans-serif;
+  }
+}
+
+@layer components {
+  .mobile-container {
+    @apply max-w-md mx-auto bg-surface min-h-screen relative shadow-2xl;
+  }
+  
+  .task-card, .appointment-card {
+    @apply bg-surface rounded-xl p-4 shadow-sm border border-border relative overflow-hidden transition-all duration-200 hover:shadow-md;
+  }
+  
+  .floating-action-button {
+    @apply w-14 h-14 bg-primary rounded-full shadow-lg hover:shadow-xl flex items-center justify-center transition-all duration-200 hover:scale-105 active:scale-95;
+  }
+  
+  .modal-overlay {
+    @apply fixed inset-0 bg-black/50 backdrop-blur-sm z-50 opacity-0 pointer-events-none transition-opacity duration-300;
+  }
+  
+  .modal-overlay.open {
+    @apply opacity-100 pointer-events-auto;
+  }
+  
+  .modal-content {
+    @apply absolute bottom-0 left-0 right-0 max-w-md mx-auto bg-surface rounded-t-3xl transform translate-y-full transition-transform duration-300;
+  }
+  
+  .modal-content.open {
+    @apply translate-y-0;
+  }
+  
+  .tab-button {
+    @apply flex-1 py-2 px-3 text-sm font-medium rounded-md transition-all duration-200;
+  }
+  
+  .tab-button.active {
+    @apply bg-surface text-primary shadow-sm;
+  }
+  
+  .tab-button.inactive {
+    @apply text-muted-foreground hover:text-foreground;
+  }
+}
+
+@layer utilities {
+  .haptic-feedback {
+    @apply active:scale-95 transition-transform duration-75;
+  }
+}
