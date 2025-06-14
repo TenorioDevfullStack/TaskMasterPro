@@ -109,26 +109,30 @@ export default function Home() {
       <main className="px-4 py-4 pb-24 space-y-4">
         {/* Quick Stats */}
         {activeTab === 'hoje' && (
-          <div className="grid grid-cols-2 gap-3 mb-6">
-            <div className="bg-surface rounded-xl p-4 shadow-sm border border-border">
+          <div className="grid grid-cols-2 gap-4 mb-8">
+            <div className="stat-card group cursor-pointer">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-2xl font-bold text-foreground">{todayTasks.length}</p>
-                  <p className="text-sm text-muted-foreground">Tarefas hoje</p>
+                  <p className="text-3xl font-bold gradient-text animate-pulse-slow">{todayTasks.length}</p>
+                  <p className="text-sm text-muted-foreground font-medium">Tarefas hoje</p>
                 </div>
-                <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center">
-                  <CheckCircle2 className="text-primary w-5 h-5" />
+                <div className="w-12 h-12 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-all duration-300 relative overflow-hidden"
+                     style={{ background: 'var(--primary)' }}>
+                  <CheckCircle2 className="text-primary-foreground w-6 h-6 relative z-10" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent"></div>
                 </div>
               </div>
             </div>
-            <div className="bg-surface rounded-xl p-4 shadow-sm border border-border">
+            <div className="stat-card group cursor-pointer">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-2xl font-bold text-foreground">{todayAppointments.length}</p>
-                  <p className="text-sm text-muted-foreground">Compromissos</p>
+                  <p className="text-3xl font-bold gradient-text animate-pulse-slow">{todayAppointments.length}</p>
+                  <p className="text-sm text-muted-foreground font-medium">Compromissos</p>
                 </div>
-                <div className="w-10 h-10 bg-secondary/10 rounded-lg flex items-center justify-center">
-                  <Calendar className="text-secondary w-5 h-5" />
+                <div className="w-12 h-12 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-all duration-300 relative overflow-hidden"
+                     style={{ background: 'var(--secondary)' }}>
+                  <Calendar className="text-secondary-foreground w-6 h-6 relative z-10" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent"></div>
                 </div>
               </div>
             </div>
@@ -194,33 +198,34 @@ export default function Home() {
       </main>
 
       {/* Floating Action Button */}
-      <div className="fixed bottom-6 right-6 z-30">
+      <div className="fixed bottom-24 right-6 z-30">
         <button
-          className="floating-action-button haptic-feedback"
+          className="floating-action-button haptic-feedback animate-float"
           onClick={() => setIsCreateModalOpen(true)}
         >
-          <Plus className="text-primary-foreground w-6 h-6" />
+          <Plus className="text-primary-foreground w-7 h-7 relative z-10" />
         </button>
       </div>
 
       {/* Bottom Navigation */}
-      <nav className="fixed bottom-0 left-0 right-0 max-w-md mx-auto bg-surface border-t border-border px-4 py-2 z-20">
+      <nav className="fixed bottom-0 left-0 right-0 max-w-md mx-auto glass-card border-t border-border px-4 py-3 z-20 backdrop-blur-xl">
         <div className="flex items-center justify-around">
-          <button className="flex flex-col items-center space-y-1 p-2 text-primary">
+          <button className="flex flex-col items-center space-y-2 p-3 rounded-xl transition-all duration-300 hover:scale-110" 
+                  style={{ background: 'var(--primary)', color: 'var(--primary-foreground)' }}>
             <CheckCircle2 className="w-5 h-5" />
-            <span className="text-xs font-medium">Início</span>
+            <span className="text-xs font-semibold">Início</span>
           </button>
-          <button className="flex flex-col items-center space-y-1 p-2 text-muted-foreground hover:text-foreground transition-colors">
+          <button className="flex flex-col items-center space-y-2 p-3 text-muted-foreground hover:text-foreground transition-all duration-300 hover:scale-110 rounded-xl glass-card">
             <Calendar className="w-5 h-5" />
-            <span className="text-xs">Calendário</span>
+            <span className="text-xs font-medium">Calendário</span>
           </button>
-          <button className="flex flex-col items-center space-y-1 p-2 text-muted-foreground hover:text-foreground transition-colors">
+          <button className="flex flex-col items-center space-y-2 p-3 text-muted-foreground hover:text-foreground transition-all duration-300 hover:scale-110 rounded-xl glass-card">
             <BarChart3 className="w-5 h-5" />
-            <span className="text-xs">Insights</span>
+            <span className="text-xs font-medium">Insights</span>
           </button>
-          <button className="flex flex-col items-center space-y-1 p-2 text-muted-foreground hover:text-foreground transition-colors">
+          <button className="flex flex-col items-center space-y-2 p-3 text-muted-foreground hover:text-foreground transition-all duration-300 hover:scale-110 rounded-xl glass-card">
             <Settings className="w-5 h-5" />
-            <span className="text-xs">Config</span>
+            <span className="text-xs font-medium">Config</span>
           </button>
         </div>
       </nav>

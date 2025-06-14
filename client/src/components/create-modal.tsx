@@ -120,22 +120,22 @@ export function CreateModal({ isOpen, onClose }: CreateModalProps) {
       >
         <div className="p-6">
           {/* Modal Header */}
-          <div className="flex items-center justify-between mb-6">
-            <h2 className="text-xl font-semibold text-foreground">
+          <div className="flex items-center justify-between mb-8">
+            <h2 className="text-2xl font-bold gradient-text">
               {formType === 'task' ? 'Nova Tarefa' : 'Novo Compromisso'}
             </h2>
             <Button
               variant="ghost"
               size="icon"
-              className="w-8 h-8 rounded-lg hover:bg-muted"
+              className="w-10 h-10 rounded-xl glass-card hover:scale-110 transition-all duration-300"
               onClick={handleClose}
             >
-              <X className="w-4 h-4 text-muted-foreground" />
+              <X className="w-5 h-5 text-muted-foreground" />
             </Button>
           </div>
 
           {/* Form Type Toggle */}
-          <div className="flex space-x-1 bg-muted rounded-lg p-1 mb-6">
+          <div className="flex space-x-2 glass-card rounded-2xl p-2 mb-8">
             <button
               type="button"
               className={`tab-button ${formType === 'task' ? 'active' : 'inactive'}`}
