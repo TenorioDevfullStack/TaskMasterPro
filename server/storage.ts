@@ -1,4 +1,6 @@
 import { tasks, appointments, type Task, type Appointment, type InsertTask, type InsertAppointment } from "@shared/schema";
+import { db } from "./db";
+import { eq } from "drizzle-orm";
 
 export interface IStorage {
   // Task operations
@@ -16,94 +18,70 @@ export interface IStorage {
   deleteAppointment(id: number): Promise<boolean>;
 }
 
-export class MemStorage implements IStorage {
-  private tasks: Map<number, Task>;
-  private appointments: Map<number, Appointment>;
-  private currentTaskId: number;
-  private currentAppointmentId: number;
-
-  constructor() {
-    this.tasks = new Map();
-    this.appointments = new Map();
-    this.currentTaskId = 1;
-    this.currentAppointmentId = 1;
-  }
-
+export class DatabaseStorage implements IStorage {
   // Task operations
   async getTasks(): Promise<Task[]> {
-    return Array.from(this.tasks.values());
+    return await db.select().from(tasks);
   }
 
   async getTask(id: number): Promise<Task | undefined> {
-    return this.tasks.get(id);
+    const [task] = await db.select().from(tasks).where(eq(tasks.id, id));
+    return task || undefined;
   }
 
   async createTask(insertTask: InsertTask): Promise<Task> {
-    const id = this.currentTaskId++;
-    const task: Task = { 
-      id,
-      title: insertTask.title,
-      description: insertTask.description ?? null,
-      category: insertTask.category,
-      date: insertTask.date,
-      time: insertTask.time,
-      completed: insertTask.completed ?? false,
-      reminderEnabled: insertTask.reminderEnabled ?? false
-    };
-    this.tasks.set(id, task);
+    const [task] = await db
+      .insert(tasks)
+      .values(insertTask)
+      .returning();
     return task;
   }
 
   async updateTask(id: number, updateData: Partial<InsertTask>): Promise<Task | undefined> {
-    const existingTask = this.tasks.get(id);
-    if (!existingTask) return undefined;
-    
-    const updatedTask: Task = { ...existingTask, ...updateData };
-    this.tasks.set(id, updatedTask);
-    return updatedTask;
+    const [task] = await db
+      .update(tasks)
+      .set(updateData)
+      .where(eq(tasks.id, id))
+      .returning();
+    return task || undefined;
   }
 
   async deleteTask(id: number): Promise<boolean> {
-    return this.tasks.delete(id);
+    const result = await db.delete(tasks).where(eq(tasks.id, id));
+    return result.rowCount > 0;
   }
 
   // Appointment operations
   async getAppointments(): Promise<Appointment[]> {
-    return Array.from(this.appointments.values());
+    return await db.select().from(appointments);
   }
 
   async getAppointment(id: number): Promise<Appointment | undefined> {
-    return this.appointments.get(id);
+    const [appointment] = await db.select().from(appointments).where(eq(appointments.id, id));
+    return appointment || undefined;
   }
 
   async createAppointment(insertAppointment: InsertAppointment): Promise<Appointment> {
-    const id = this.currentAppointmentId++;
-    const appointment: Appointment = { 
-      id,
-      title: insertAppointment.title,
-      description: insertAppointment.description ?? null,
-      location: insertAppointment.location ?? null,
-      date: insertAppointment.date,
-      startTime: insertAppointment.startTime,
-      endTime: insertAppointment.endTime,
-      reminderEnabled: insertAppointment.reminderEnabled ?? false
-    };
-    this.appointments.set(id, appointment);
+    const [appointment] = await db
+      .insert(appointments)
+      .values(insertAppointment)
+      .returning();
     return appointment;
   }
 
   async updateAppointment(id: number, updateData: Partial<InsertAppointment>): Promise<Appointment | undefined> {
-    const existingAppointment = this.appointments.get(id);
-    if (!existingAppointment) return undefined;
-    
-    const updatedAppointment: Appointment = { ...existingAppointment, ...updateData };
-    this.appointments.set(id, updatedAppointment);
-    return updatedAppointment;
+    const [appointment] = await db
+      .update(appointments)
+      .set(updateData)
+      .where(eq(appointments.id, id))
+      .returning();
+    return appointment || undefined;
   }
 
   async deleteAppointment(id: number): Promise<boolean> {
-    return this.appointments.delete(id);
+    const result = await db.delete(appointments).where(eq(appointments.id, id));
+    return result.rowCount > 0;
   }
 }
 
-export const storage = new MemStorage();
+export const storage = new DatabaseStorage();
